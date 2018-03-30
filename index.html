@@ -6,7 +6,8 @@
             <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
                 <style>
                     body {
-                        font-family: Monospace;
+                        font-family: Georgian, serif;
+                        font-size: 150%;
                         background-color: #000;
                         color: #fff;
                         margin: 0px;
@@ -16,8 +17,9 @@
                     color: #fff;
                     position: absolute;
                     top: 10px;
+                    left: 10px;
                     width: 100%;
-                    text-align: center;
+                    text-align: left;
                     z-index: 100;
                     display:block;
                 }
@@ -25,14 +27,39 @@
                     color: #046;
                     font-weight: bold;
                 }
+
+                #instructions {
+                	color: #fff;
+                    position: absolute;
+                    font-size: 60%;
+                    top: 10px;
+                    left: 10px;
+                    width: 100%;
+                    text-align: left;
+                    z-index: 100;
+                    display:block;
+                }
                 </style>
                 </head>
     
     <body>
         <div id="info">
-            White Matter Tracts of the Human Brain
+            Explore the White Matter of the Human Brain
         </div>
-        
+
+        <div id="instructions">
+        	<p>
+    		<br>
+    		<br>
+    		Interact with 20 of the major white matter <br>
+    		tracts of the human brain! <br>
+    		<br>
+    		Explore how the white matter appears below <br>
+    		the transparent exterior surface of the brain.<br>
+
+        	 <br>Adjust the sliders to change the transparency<br> 
+        	 levels of each item.</p>
+        	 </div>
 
         <script src="js/three.js"></script>
         
@@ -84,7 +111,7 @@
                 scene.add( light );
 
 
-                var gui = new dat.GUI({ width: 450 });
+                var gui = new dat.GUI({ width: 425 });
                
                 var props = {
                     cfmavis: 1,
