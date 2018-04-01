@@ -9,7 +9,8 @@
 /*                        font-family: Verdana, sans-serif;*/
                         font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
                         font-size: 130%;
-                        background-color: #000;
+/*                        background-color: #000;*/
+                        background: radial-gradient(circle, transparent 50%, black), #333333;
                         color: #fff;
                         margin: 0px;
                         overflow: hidden;
@@ -99,7 +100,7 @@
                 
                 
                 scene = new THREE.Scene();
-                scene.background = new THREE.Color( 0x333333 );
+//                scene.background = new THREE.Color( 0x333333 );
 
                 light = new THREE.AmbientLight( 0xffffff, .6 );
                 light.position.set( -0.66, -32.8, 7.5)
@@ -517,10 +518,12 @@
                 // get initial position in the world
 
 
-                renderer = new THREE.WebGLRenderer();
+                renderer = new THREE.WebGLRenderer({antialias: true, alpha: true});
                 renderer.setPixelRatio( window.devicePixelRatio );
                 renderer.setSize( window.innerWidth, window.innerHeight );
                 renderer.shadowMap.enabled = true;
+                renderer.autoClear = false;
+                renderer.setClearColor(0x000000, 0.0);
                 //renderer.sortObjects = false;
                 container.appendChild( renderer.domElement );
                 window.addEventListener( 'resize', onWindowResize, false );
@@ -545,7 +548,7 @@
             camera.updateProjectionMatrix();
             renderer.setSize( window.innerWidth, window.innerHeight );
             }
-
+            
             function render() {
                 renderer.render( scene, camera );
             }
