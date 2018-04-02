@@ -114,6 +114,9 @@
 
 
                 var gui = new dat.GUI({ width: 420 });
+                var f1 = gui.addFolder('Association Tracts');
+                var f2 = gui.addFolder('Projection Tracts');
+                var f3 = gui.addFolder('Commissural Tracts');
                
                 var props = {
                     cfmavis: 1,
@@ -142,7 +145,7 @@
                     scene.add( cfma );
                     cfma.material.transparent = true;
                     cfma.material.opacity = 1;
-                    gui.add(props, 'cfmavis', 0, 1).name('Callosum Forceps Major').onChange(function(opval) {
+                    f3.add(props, 'cfmavis', 0, 1).name('Callosum Forceps Major').onChange(function(opval) {
                 cfma.material.opacity = opval;
                  if ( opval < .12 ) {
                     cfma.visible = false;
@@ -162,7 +165,7 @@
                     scene.add( cfmi );
                     cfmi.material.transparent = true;
                     cfmi.material.opacity = 1;
-                    gui.add(props, 'cfmivis', 0, 1).name('Callosum Forceps Minor').onChange(function(opval) {
+                    f3.add(props, 'cfmivis', 0, 1).name('Callosum Forceps Minor').onChange(function(opval) {
                 cfmi.material.opacity = opval;
                  if ( opval < .12 ) {
                     cfmi.visible = false;
@@ -188,7 +191,7 @@
                     rarc.material.transparent = true;
                     rarc.material.opacity = 1;
 
-                    gui.add(props, 'arcvis', 0, 1).name('Arcuate Fasiculus').onChange(function(opval) {
+                    f1.add(props, 'arcvis', 0, 1).name('Arcuate Fasiculus').onChange(function(opval) {
                 larc.material.opacity = opval;
                 rarc.material.opacity = opval;
                  if ( opval < .12 ) {
@@ -220,7 +223,7 @@
                     rcc.material.opacity = 1;
 
                 
-                    gui.add(props, 'ccvis', 0, 1).name('Cingulum Cingulate').onChange(function(opval) {
+                    f1.add(props, 'ccvis', 0, 1).name('Cingulum Cingulate').onChange(function(opval) {
                 lcc.material.opacity = opval;
                 rcc.material.opacity = opval;
                   if ( opval < .12 ) {
@@ -250,7 +253,7 @@
                     scene.add( rslf );
                     rslf.material.transparent = true;
                     rslf.material.opacity = 1;
-                    gui.add(props, 'slfvis', 0, 1).name('Sup. Longitudinal Fasiculus').onChange(function(opval) {
+                    f1.add(props, 'slfvis', 0, 1).name('Sup. Longitudinal Fasiculus').onChange(function(opval) {
                 lslf.material.opacity = opval;
                 rslf.material.opacity = opval;
                   if ( opval < .12 ) {
@@ -318,7 +321,7 @@
                     scene.add( rifof );
                     rifof.material.transparent = true;
                     rifof.material.opacity = 1;
-                    gui.add(props, 'ifofvis', 0, 1).name('Inf. Fronto-Occipital Fasiculus').onChange(function(opval) {
+                    f1.add(props, 'ifofvis', 0, 1).name('Inf. Fronto-Occipital Fasiculus').onChange(function(opval) {
                 lifof.material.opacity = opval;
                 rifof.material.opacity = opval;
                   if ( opval < .12 ) {
@@ -345,7 +348,7 @@
                     scene.add( rcs );
                     rcs.material.transparent = true;
                     rcs.material.opacity = 1;
-                    gui.add(props, 'csvis', 0, 1).name('Corticospinal Tract').onChange(function(opval) {
+                    f2.add(props, 'csvis', 0, 1).name('Corticospinal Tract').onChange(function(opval) {
                 lcs.material.opacity = opval;
                 rcs.material.opacity = opval;
                   if ( opval < .12 ) {
@@ -375,7 +378,7 @@
                     rch.material.transparent = true;
                     rch.material.opacity = 1;
 
-                    gui.add(props, 'chvis', 0, 1).name('Cingulum Hippocampus').onChange(function(opval) {
+                    f1.add(props, 'chvis', 0, 1).name('Cingulum Hippocampus').onChange(function(opval) {
                 lch.material.opacity = opval;
                 rch.material.opacity = opval;
                   if ( opval < .12 ) {
@@ -402,7 +405,7 @@
                     scene.add( rilf );
                     rilf.material.transparent = true;
                     rilf.material.opacity = 1;
-                    gui.add(props, 'ilfvis', 0, 1).name('Inf. Longitudinal Fasiculus').onChange(function(opval) {
+                    f1.add(props, 'ilfvis', 0, 1).name('Inf. Longitudinal Fasiculus').onChange(function(opval) {
                 lilf.material.opacity = opval;
                 rilf.material.opacity = opval;
                   if ( opval < .12) {
@@ -431,7 +434,7 @@
                     scene.add( rtr );
                     rtr.material.transparent = true;
                     rtr.material.opacity = 1;
-                    gui.add(props, 'trvis', 0, 1).name('Thalamic Radiation').onChange(function(opval) {
+                    f2.add(props, 'trvis', 0, 1).name('Thalamic Radiation').onChange(function(opval) {
                 ltr.material.opacity = opval;
                 rtr.material.opacity = opval;
                   if ( opval < .12 ) {
@@ -462,7 +465,7 @@
                     ru.material.transparent = true;
                     ru.material.opacity = 1;
 
-                    gui.add(props, 'uvis', 0, 1).name('Uncinate Fasiculus').onChange(function(opval) {
+                    f1.add(props, 'uvis', 0, 1).name('Uncinate Fasiculus').onChange(function(opval) {
                 lu.material.opacity = opval;
                 ru.material.opacity = opval;
                 if ( opval < .12 ) {
